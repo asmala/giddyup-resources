@@ -47,8 +47,6 @@ other files are needed to get started.
 
 ; You can also specify if you want the files minified
 (include-bootstrap :minified? true)
-
-;
 ```
 
 
