@@ -16,7 +16,7 @@ Add the following to your `project.clj`:
 ```
 
 For other options, please refer to the library
-[Clojars page](https://clojars.org/giddyup).
+[Clojars page](https://clojars.org/giddyup-resources).
 
 
 ## Middleware
