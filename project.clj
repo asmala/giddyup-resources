@@ -1,4 +1,4 @@
-(defproject giddyup-resources "0.1.0"
+(defproject giddyup-resources "0.2.0"
   :description "Convenience methods for including Bootstrap resources."
   :url "https://github.com/asmala/giddyup-resources"
   :license {:name "Eclipse Public License"

@@ -10,6 +10,11 @@
   [file]
   (str "/giddyup" file))
 
+(defn- cdn-res
+  "Returns the full resource path for `file` hosted on CDNJS."
+  [file]
+  (str "http://cdnjs.cloudflare.com/ajax/libs" file))
+
 (deftest test-include-bootstrap-css
   (testing "include-bootstrap-css"
     (let [result (html (include-bootstrap-css))]
@@ -19,6 +24,11 @@
       (let [result (html (include-bootstrap-css :minified? true))]
         (is (= result
                (html (include-css (res "/css/bootstrap.min.css")))))))
+    (testing "cdn"
+      (let [result (html (include-bootstrap-css :cdn? true))]
+        (is (= result
+               (html (include-css
+                      (cdn-res "/twitter-bootstrap/2.1.1/css/bootstrap.css")))))))
     (testing "responsive"
       (let [result (html (include-bootstrap-css :responsive? true))]
         (is (= result
@@ -36,10 +46,12 @@
         (is (= result
                (html (include-js (res "/js/jquery.min.js")
                                  (res "/js/bootstrap.min.js")))))))
-    (testing "without jquery"
-      (let [result (html (include-bootstrap-js :jquery? false))]
+    (testing "cdn"
+      (let [result (html (include-bootstrap-js :cdn? true))]
         (is (= result
-               (html (include-js (res "/js/bootstrap.js")))))))))
+               (html (include-js
+                      (cdn-res "/jquery/1.8.2/jquery.js")
+                      (cdn-res "/twitter-bootstrap/2.1.1/bootstrap.js")))))))))
 
 (deftest test-include-bootstrap
   (testing "include-bootstrap"
@@ -54,3 +66,4 @@
                (html (include-css (res "/css/bootstrap.min.css"))
                      (include-js (res "/js/jquery.min.js")
                                  (res "/js/bootstrap.min.js")))))))))
+
