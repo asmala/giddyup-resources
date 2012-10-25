@@ -12,7 +12,7 @@ together with [Giddyup](https://github.com/asmala/giddyup).
 Add the following to your `project.clj`:
 
 ```clojure
-[giddyup-resources "0.2.0"]
+[giddyup-resources "0.2.1"]
 ```
 
 For other options, please refer to the library

@@ -1,11 +1,23 @@
-(ns giddyup-resources.includes
+(ns ^{:doc "Hiccup functions for including Bootstrap resources."}
+  giddyup-resources.includes
   (:use [hiccup.page :only [include-css include-js]]))
 
 (def ^:private cdn-base
   "http://cdnjs.cloudflare.com/ajax/libs")
 
 (defn include-bootstrap-css
-  "Returns CSS include tags for Bootstrap resources."
+  "Returns CSS include tags for Bootstrap resources.
+
+  ### Options
+
+  * `:cdn?`:  If true, links to CDN hosted CSS files. Defaults to false.
+  * `:minified?`: If true, links to minified CSS filed. Defaults to false.
+  * `:responsive?`: If true, also links to the responsive stylesheet. Defaults
+    to false.
+
+  ### Example
+
+      (include-bootstrap-css :cdn? true :responsive? true)"
   [& {:keys [cdn? minified? responsive?]}]
   (let [prefix (if cdn?
                  (str cdn-base "/twitter-bootstrap/2.1.1/css/")
@@ -17,7 +29,16 @@
        (include-css (str prefix "bootstrap-responsive" suffix))))))
 
 (defn include-bootstrap-js
-  "Returns JavaScript include tags for Bootstrap resources."
+  "Returns JavaScript include tags for Bootstrap resources.
+
+  ### Options
+
+  * `:cdn?`:  If true, links to CDN hosted JS files. Defaults to false.
+  * `:minified?`: If true, links to minified JS filed. Defaults to false.
+
+  ### Example
+
+      (include-bootstrap-js :minified? true)"
   [& {:keys [cdn? minified?]}]
   (let [suffix (if minified? ".min.js" ".js")
         jquery (if cdn?
@@ -29,7 +50,18 @@
     (include-js jquery bootstrap)))
 
 (defn include-bootstrap
-  "Returns CSS and JavaScript include tags for Bootstrap resources."
+  "Returns CSS and JavaScript include tags for Bootstrap resources.
+
+  ### Options
+
+  * `:cdn?`:  If true, links to CDN hosted files. Defaults to false.
+  * `:minified?`: If true, links to minified filed. Defaults to false.
+  * `:responsive?`: If true, also links to the responsive stylesheet. Defaults
+    to false.
+
+  ### Example
+
+      (include-bootstrap :cdn? true)"
   [& args]
   (list (apply include-bootstrap-css args)
         (apply include-bootstrap-js args)))
