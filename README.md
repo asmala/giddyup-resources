@@ -19,6 +19,12 @@ For other options, please refer to the library
 [Clojars page](https://clojars.org/giddyup-resources).
 
 
+## Documentation
+
+You can find examples below and for more extensive documentation you
+can refer to the [API docs](http://asmala.github.com/giddyup-resources).
+
+
 ## Middleware
 
 The middleware will make all Bootstrap CSS and JavaScript available
