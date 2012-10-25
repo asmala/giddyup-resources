@@ -1,5 +1,5 @@
-(ns ^{:doc "Hiccup functions for including Bootstrap resources."}
-  giddyup-resources.includes
+(ns giddyup-resources.includes
+  "Hiccup functions for including Bootstrap resources."
   (:use [hiccup.page :only [include-css include-js]]))
 
 (def ^:private cdn-base
