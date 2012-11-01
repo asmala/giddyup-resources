@@ -20,7 +20,7 @@
       (include-bootstrap-css :cdn? true :responsive? true)"
   [& {:keys [cdn? minified? responsive?]}]
   (let [prefix (if cdn?
-                 (str cdn-base "/twitter-bootstrap/2.1.1/css/")
+                 (str cdn-base "/twitter-bootstrap/2.2.1/css/")
                  "/giddyup/css/")
         suffix (if minified? ".min.css" ".css")]
     (list
@@ -45,7 +45,7 @@
                  (str cdn-base "/jquery/1.8.2/jquery" suffix)
                  (str "/giddyup/js/jquery" suffix))
         bootstrap (if cdn?
-                    (str cdn-base "/twitter-bootstrap/2.1.1/bootstrap" suffix)
+                    (str cdn-base "/twitter-bootstrap/2.2.1/bootstrap" suffix)
                     (str "/giddyup/js/bootstrap" suffix))]
     (include-js jquery bootstrap)))
 
