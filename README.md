@@ -12,7 +12,7 @@ together with [Giddyup](https://github.com/asmala/giddyup).
 Add the following to your `project.clj`:
 
 ```clojure
-[giddyup-resources "0.2.3"]
+[giddyup-resources "0.3.0"]
 ```
 
 For other options, please refer to the library
@@ -47,12 +47,12 @@ other files are needed to get started.
 (include-bootstrap-css)
 (include-bootstrap-js)
 
-; Responsive CSS is not included by default
-(include-bootstrap :responsive? true)
-(include-boostrap-css :responsive? true)
+; Responsive CSS can be excluded
+(include-bootstrap {:responsive? false})
+(include-boostrap-css {:responsive? false})
 
 ; You can also specify if you want the files minified or pulled from CDNJS
-(include-bootstrap :minified? true :cdn? true)
+(include-bootstrap {:minified? true :location :cdn})
 ```
 
 
