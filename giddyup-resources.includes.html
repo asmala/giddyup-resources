@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html><head><link href="css/default.css" rel="stylesheet" type="text/css"><script src="js/jquery.min.js" type="text/javascript"></script><script src="js/page_effects.js" type="text/javascript"></script><title>giddyup-resources.includes documentation</title></head><body><div id="header"><h1><a href="index.html">Giddyup-resources 0.2.3 API documentation</a></h1></div><div class="sidebar" id="namespaces"><h3><span>Namespaces</span></h3><ul><li class="current"><a href="giddyup-resources.includes.html"><span>giddyup-resources.includes</span></a></li><li><a href="giddyup-resources.middleware.html"><span>giddyup-resources.middleware</span></a></li></ul></div><div class="sidebar" id="vars"><h3>Public Vars</h3><ul><li><a href="giddyup-resources.includes.html#var-include-bootstrap"><span>include-bootstrap</span></a></li><li><a href="giddyup-resources.includes.html#var-include-bootstrap-css"><span>include-bootstrap-css</span></a></li><li><a href="giddyup-resources.includes.html#var-include-bootstrap-js"><span>include-bootstrap-js</span></a></li></ul></div><div class="namespace-docs" id="content"><h2>giddyup-resources.includes documentation</h2><pre class="doc">Hiccup functions for including Bootstrap resources.
-</pre><div class="public" id="var-include-bootstrap"><h3>include-bootstrap</h3><div class="usage"><code>(include-bootstrap &amp; args)</code></div><pre class="doc">Returns CSS and JavaScript include tags for Bootstrap resources.
+<html><head><link href="css/default.css" rel="stylesheet" type="text/css"><script src="js/jquery.min.js" type="text/javascript"></script><script src="js/page_effects.js" type="text/javascript"></script><title>giddyup-resources.includes documentation</title></head><body><div id="header"><h1><a href="index.html">Giddyup-resources 0.3.0 API documentation</a></h1></div><div class="sidebar" id="namespaces"><h3><span>Namespaces</span></h3><ul><li class="current"><a href="giddyup-resources.includes.html"><span>giddyup-resources.includes</span></a></li><li><a href="giddyup-resources.middleware.html"><span>giddyup-resources.middleware</span></a></li></ul></div><div class="sidebar" id="vars"><h3>Public Vars</h3><ul><li><a href="giddyup-resources.includes.html#var-include-bootstrap"><span>include-bootstrap</span></a></li><li><a href="giddyup-resources.includes.html#var-include-bootstrap-css"><span>include-bootstrap-css</span></a></li><li><a href="giddyup-resources.includes.html#var-include-bootstrap-js"><span>include-bootstrap-js</span></a></li></ul></div><div class="namespace-docs" id="content"><h2>giddyup-resources.includes documentation</h2><pre class="doc">Hiccup functions for including Bootstrap resources.
 
 ### Options
 
-* `:cdn?`:  If true, links to CDN hosted files. Defaults to false.
-* `:minified?`: If true, links to minified filed. Defaults to false.
+Functions in this namespace accept the following options:
+
+* `:location`:  If `:cdn`, links to CDN hosted files. Defaults to `:local`.
+* `:minified?`: If true, links to minified files. Defaults to false.
 * `:responsive?`: If true, also links to the responsive stylesheet. Defaults
-  to false.
+  to true.</pre><div class="public" id="var-include-bootstrap"><h3>include-bootstrap</h3><div class="usage"><code>(include-bootstrap)</code><code>(include-bootstrap opts)</code></div><pre class="doc">Returns CSS and JavaScript include tags for Bootstrap resources.
 
 ### Example
 
-    (include-bootstrap :cdn? true)</pre></div><div class="public" id="var-include-bootstrap-css"><h3>include-bootstrap-css</h3><div class="usage"><code>(include-bootstrap-css &amp; {:keys [cdn? minified? responsive?]})</code></div><pre class="doc">Returns CSS include tags for Bootstrap resources.
-
-### Options
-
-* `:cdn?`:  If true, links to CDN hosted CSS files. Defaults to false.
-* `:minified?`: If true, links to minified CSS filed. Defaults to false.
-* `:responsive?`: If true, also links to the responsive stylesheet. Defaults
-  to false.
+    (include-bootstrap {:location :cdn})</pre></div><div class="public" id="var-include-bootstrap-css"><h3>include-bootstrap-css</h3><div class="usage"><code>(include-bootstrap-css)</code><code>(include-bootstrap-css {:keys [location minified? responsive?], :or {location :local, responsive? true}})</code></div><pre class="doc">Returns CSS include tags for Bootstrap resources.
 
 ### Example
 
-    (include-bootstrap-css :cdn? true :responsive? true)</pre></div><div class="public" id="var-include-bootstrap-js"><h3>include-bootstrap-js</h3><div class="usage"><code>(include-bootstrap-js &amp; {:keys [cdn? minified?]})</code></div><pre class="doc">Returns JavaScript include tags for Bootstrap resources.
-
-### Options
-
-* `:cdn?`:  If true, links to CDN hosted JS files. Defaults to false.
-* `:minified?`: If true, links to minified JS filed. Defaults to false.
+    (include-bootstrap-css {:location :cdn :responsive? false})</pre></div><div class="public" id="var-include-bootstrap-js"><h3>include-bootstrap-js</h3><div class="usage"><code>(include-bootstrap-js)</code><code>(include-bootstrap-js {:keys [location minified?], :or {location :local}})</code></div><pre class="doc">Returns JavaScript include tags for Bootstrap resources.
 
 ### Example
 
-    (include-bootstrap-js :minified? true)</pre></div></div></body></html>
+    (include-bootstrap-js {:minified? true})</pre></div></div></body></html>
