@@ -1,6 +1,6 @@
 (ns giddyup-resources.middleware
   "Ring middleware for including resources for Bootstrap."
-  (:use [ compojure.core :only [routes]])
+  (:use [compojure.core :only [routes]])
   (:require [compojure.route :as route]))
 
 ;; Shamelessly stolen from https://github.com/weavejester/hiccup-bootstrap
